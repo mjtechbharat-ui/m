@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-section">
+        <h2>Admin Login</h2>
+        <input type="email" id="adminEmail" placeholder="Admin Email">
+        <input type="password" id="adminPassword" placeholder="Admin Password">
+        <button onclick="adminLogin()">Login</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <h2>Admin Panel</h2>
+        <button onclick="logout()">Logout</button>
+
+        <div id="earnings-overview">
+            <h3>Overview</h3>
+            <p id="total-earnings">Total Earnings: ₹0</p>
+            <p id="total-coins">Total Coins: 0</p>
+        </div>
+
+        <div id="search-section">
+            <input type="text" id="searchUser" placeholder="Search by Name or Email">
+            <button onclick="searchUsers()">Search</button>
+        </div>
+
+        <h3>Pending Withdrawal Requests</h3>
+        <table id="withdrawals-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Action</th>
+                    <th>Amount (₹)</th>
+                    <th>Method</th>
+                    <th>Gift Card Number</th>
+                    <th>Status</th>
+                    <th>Register Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Users</h3>
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    <th>Coins</th>
+                    <th>Total Withdrawn</th>
+                   <th>Register Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3>Withdrawal History</h3>
+        <table id="withdrawals-history-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Action</th>
+                    <th>Amount (₹)</th>
+                    <th>Method</th>
+                    <th>Gift Card Number</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="userPanel">
+        <div id="userDetails"></div>
+    </div>
+
+    <div id="approveModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeApproveModal()">×</span>
+            <h3>Approve Withdrawal</h3>
+            <p id="approveDetails"></p>
+            <input type="text" id="approveInput" placeholder="Enter details">
+            <button onclick="submitApproval()">Submit</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
